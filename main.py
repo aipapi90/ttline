@@ -16,7 +16,7 @@ app = FastAPI()
 # Initialize OpenAI client
 client = OpenAI(
     base_url = 'http://localhost:11434/v1',
-    api_key=os.getenv('OPENAI_API_KEY'),
+    api_key=os.getenv('OPENAI_API_KEY')
 )
 
 

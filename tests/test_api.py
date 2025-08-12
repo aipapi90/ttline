@@ -1,16 +1,8 @@
-#!/usr/bin/env python3
-"""
-Simple test script for the FastAPI PDF Analyzer.
-Tests the API with the sample PDF file.
-"""
-
 import requests
-import os
 from pathlib import Path
 
 def test_api():
     """Test the API with the sample PDF."""
-    
     
     # Test PDF upload
     pdf_path = Path(__file__).parent / "sample-pdf.pdf"
@@ -43,13 +35,7 @@ def test_api():
         return False
 
 if __name__ == "__main__":
-    print("🚀 Testing PDF Analyzer API...")
+    print("Testing PDF Analyzer API...")
     print("=" * 40)
     
-    success = test_api()
-    
-    print("=" * 40)
-    if success:
-        print("🎉 Test completed successfully!")
-    else:
-        print("💥 Test failed!")
+    test_api()
