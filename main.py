@@ -13,11 +13,14 @@ load_dotenv()
 
 app = FastAPI()
 
-# Initialize OpenAI client
-client = OpenAI(
-    base_url = 'http://localhost:11434/v1',
-    api_key=os.getenv('OPENAI_API_KEY')
-)
+local_mode = os.getenv('LOCAL_MODE')
+if local_mode:
+    # Use Ollama 
+    base_url = os.getenv('OPENAI_BASE_URL', 'http://localhost:11434/v1')
+    client = OpenAI(base_url='http://localhost:11434/v1', api_key='ollama')
+else:
+    # Use default OpenAI API
+    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 
 @app.post("/analyze-pdf")

@@ -42,3 +42,19 @@ A simple FastAPI app to analyze PDF files and extract structured data using an L
 ## Notes
 - Requires Python 3.9+
 - For local LLM (Ollama), make sure Ollama is running and accessible at the configured base URL.
+
+## Switching between local (Ollama) and OpenAI models
+
+Use the LOCAL_MODE flag in your .env to switch providers:
+
+- Local (Ollama):
+   - Ensure Ollama is running
+   - LOCAL_MODE=True
+   - MODEL_NAME=llama2 (or any Ollama-installed model)
+
+- OpenAI or other hosted model:
+   - LOCAL_MODE=false
+   - OPENAI_API_KEY=... (your OpenAI API key)
+   - MODEL_NAME=gpt-4o-mini (or another available OpenAI model)
+
+After updating .env, restart the server.
