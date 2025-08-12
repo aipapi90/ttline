@@ -17,7 +17,6 @@ A simple FastAPI app to analyze PDF files and extract structured data using an L
    ```
 
 4. **Set up environment variables:**
-   - Copy `.env.example` to `.env` with
    ```sh
    cp .env.example .env
    ```
