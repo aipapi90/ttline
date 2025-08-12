@@ -53,7 +53,7 @@ Use the LOCAL_MODE flag in your .env to switch providers:
    - MODEL_NAME=llama2 (or any Ollama-installed model)
 
 - OpenAI or other hosted model:
-   - LOCAL_MODE=false
+   - LOCAL_MODE=False
    - OPENAI_API_KEY=... (your OpenAI API key)
    - MODEL_NAME=gpt-4o-mini (or another available OpenAI model)
 

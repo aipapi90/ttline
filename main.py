@@ -14,6 +14,8 @@ load_dotenv()
 app = FastAPI()
 
 local_mode = os.getenv('LOCAL_MODE')
+model_name = os.getenv('MODEL_NAME')
+
 if local_mode:
     # Use Ollama 
     base_url = os.getenv('OPENAI_BASE_URL', 'http://localhost:11434/v1')
@@ -47,7 +49,7 @@ async def analyze_pdf(file: UploadFile = File(...)):
         
         # Analyze with OpenAI
         response = client.chat.completions.create(
-            model=os.getenv('MODEL_NAME'),
+            model=model_name,
             messages=[
                 {
                     "role": "system", 
