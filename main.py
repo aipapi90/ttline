@@ -18,7 +18,6 @@ model_name = os.getenv('MODEL_NAME')
 
 if local_mode:
     # Use Ollama 
-    base_url = os.getenv('OPENAI_BASE_URL', 'http://localhost:11434/v1')
     client = OpenAI(base_url='http://localhost:11434/v1', api_key='ollama')
 else:
     # Use default OpenAI API
